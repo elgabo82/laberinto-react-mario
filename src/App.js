@@ -11,8 +11,8 @@ let max_mashroom;
 function Welcome(props) {
 	return (
 		<div>
-			<h2>Mario Maze Game</h2>
-			<p>You need to eat all the mashrooms in 64 steps. By Default maze size is 10 x 10, you can change it by reloading or entering the height and width in prompt.</p>
+			<h2>Basado en el Juego del laberinto de Mario</h2>
+			<p>Debes comerte todos los hongos en 64 pasos, el laberinto por defecto es de 10x10, puedes cambiar los valores al recargar o ingresando el alto y ancho en el prompt.</p>
 		</div>
 		)
 }
@@ -39,19 +39,19 @@ let Score = createReactClass({
 		return (
 		<div id="score">
 			<div>
-				<p>Score Achived</p>
+				<p>Puntaje</p>
 				<p id="score_achived">0</p>
 			</div>
 			<div>
-				<p>Steps Used</p>
+				<p>Pasos utilizados</p>
 				<p id="no_of_moves">0</p>
 			</div>
 			<div >
-				<p>Steps Remaining</p>
+				<p>Pasos restantes</p>
 				<p id="steps_remaining">0</p>
 			</div>
 			<div >
-				<p>Mashroom Remaining</p>
+				<p>Hongos restantes</p>
 				<p id="mashrooms_remaining">0</p>
 			</div>
 		</div>
@@ -76,14 +76,14 @@ let Cell = createReactClass({
 
 function checkFinish() {
 	if(no_of_moves === max_no_of_moves){
-		let confirm = window.confirm("Game Over. Do you want to restart?");
+		let confirm = window.confirm("Juego acabado, quieres reiniciar?");
 		if (confirm === true){
 			window.location.reload();
 		}
 	}
 	let check = document.getElementsByClassName('active')
 	if(check.length === 0){
-		let game_complete = window.confirm("hurray!!! You have finished the game in "+ no_of_moves + " moves.");
+		let game_complete = window.confirm("Terminaste el juego en "+ no_of_moves + " movimientos.");
 		if (game_complete === true){
 			window.location.reload()
 		}
@@ -213,8 +213,8 @@ function movement(event){
 class App extends Component {
  	constructor(props){
 		super(props);
-		let width = prompt("Enter width of game: ", "e.g. 10,20,30");
-		let height = prompt("Enter height of  game: ", "e.g. 10,20,30");
+		let width = prompt("Ingresa las columnas: ", "ejem. 10,20,30");
+		let height = prompt("Ingresa las filas: ", "ejem. 10,20,30");
 		if(height == null || width == null || isNaN(width) === true || isNaN(height) === true){
 			height = 10
 			width = 10
